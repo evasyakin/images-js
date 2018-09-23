@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Images</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="page">
+
+    <header class="page-header row">
+        <a class="to-home row" href=""><img class="logo" src="images/logo.png"><span>Images</span></a>
+    </header>
+
+    <main class="page-main">
+
+        <div class="gallery-header row">
+            <div id="add_image" class="popup">
+                <form class="add_image-form row">
+                    <p>New image</p>
+                    <input type="text" name="title" placeholder="Title" maxlength="30" required>
+                    <input type="text" name="link" placeholder="URL" maxlength="60" required>
+                    <button class="close-add_image btn">Close</button>
+                    <button class="btn-call_to_action" type="submit">Add</button>
+                </form>
+            </div>
+            <a class="open-add_image btn-call_to_action" href="">New image</a>
+        </div>
+
+        <figcaption class="gallery row">
+            
+            <figure class="image">
+                <header class="image-header row">
+                    <span class="image-title">Flower</span>
+                    <a class="to-drop_image" href="">Delete</a>
+                </header>
+                <img class="image-content" src="images/sample1.jpg">
+            </figure>
+
+            <figure class="image">
+                <header class="image-header row">
+                    <span class="image-title">Flower</span>
+                    <a class="to-drop_image" href="">Delete</a>
+                </header>
+                <img class="image-content" src="images/sample2.jpg">
+            </figure>
+
+        </figcaption>
+    </main>
+
+    <footer class="page-footer">
+        <p class="copyright">&copy; <a href="https://vk.com/evasyakin" target="_blank">Egor Vasyakin</a> for <a href="http://sibext.com/" target="_blank">Sibext</a>, 2018</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+* {box-sizing: border-box; margin: 0; padding: 0; vertical-align: top;}
+
+body {background: #f7f7f7; font-family: Arial; font-size: 15px; min-width: 240px}
+
+input {background: #fff; border: solid #ddd 1px; padding: 6px 10px; margin: 5px;}
+input:hover {border-color: #ccc;}
+input:focus {border-color: #aaa;}
+.btn, .btn-call_to_action {background: #edd; border: none; cursor: pointer; display: inline-block; font-size: 14px; padding: 6px 10px; margin: 5px; text-decoration: none;}
+.btn:hover {background: #ecc;}
+.btn-call_to_action {background: #d44; color: #fff;}
+.btn-call_to_action:hover {background: #c33;}
+
+a {text-decoration: none;}
+a:hover {text-decoration: underline;}
+
+.row {align-items: center; display: flex; justify-content: flex-start;}
+
+
+.page {margin: 0 auto; max-width: 1170px;}
+.page-header {border-bottom: solid #fff 1px; padding: 7px 15px;}
+.page-header .to-home {color: #333;}
+.page-header .logo {margin-right: 7px;}
+
+.page-main {padding: 15px;}
+
+.gallery-header {}
+.add_image-form {flex-wrap: wrap;}
+
+.gallery {align-items: flex-start; flex-wrap: wrap; margin: 0 -10px;}
+.image {background: #fff; border-radius: 5px; box-shadow: 0 0 8px 0 rgba(0,0,0,.3); margin: 15px 10px; overflow: hidden; width: calc(33.3% - 20px);}
+.image-header {font-size: .9em; padding: 10px 12px;}
+.image-title {flex-grow: 1; font-weight: 600;}
+.image-header .to-drop_image {color: #b00; font-size: .9em;}
+.image-content {width: 100%;}
+
+
+.page-footer {font-size: .75em; padding: 15px;}
+.page-footer .copyright {color: #555;}
+.page-footer .copyright a {color: #333;}
+
+
+@media screen and (max-width: 1170px) {
+    .image {width: calc(50% - 20px);}
+}
+
+@media screen and (max-width: 800px) {
+    .image {width: calc(100% - 20px);}
+}
+@media screen and (max-width: 540px) {
+    #add_image {background: rgba(246,246,246,.9); bottom: 0; left: 0; position: fixed; right: 0; top: 0;}
+    #add_image .add_image-form {justify-content: space-between; margin: 20px auto; max-width: 280px; padding: 20px; width: 100%;}
+    #add_image .add_image-form p {margin: 5px;}
+    #add_image .add_image-form input {width: 100%;}
+}
+@media screen and (min-width: 541px) {
+    #add_image .close-add_image {display: none;}
+    #add_image + .open-add_image {display: none;}
+}
