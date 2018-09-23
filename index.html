@@ -20,7 +20,7 @@
                 <form class="add_image-form row">
                     <p>New image</p>
                     <input type="text" name="title" placeholder="Title" maxlength="30" required>
-                    <input type="text" name="link" placeholder="URL" maxlength="60" required>
+                    <input type="text" name="url" placeholder="URL" maxlength="120" required>
                     <button class="close-add_image btn">Close</button>
                     <button class="btn-call_to_action" type="submit">Add</button>
                 </form>
@@ -28,9 +28,9 @@
             <a class="open-add_image btn-call_to_action" href="">New image</a>
         </div>
 
-        <figcaption class="gallery row">
+        <figcaption id="gallery" class="row">
             
-            <figure class="image">
+            <!-- <figure class="image">
                 <header class="image-header row">
                     <span class="image-title">Flower</span>
                     <a class="to-drop_image" href="">Delete</a>
@@ -44,7 +44,7 @@
                     <a class="to-drop_image" href="">Delete</a>
                 </header>
                 <img class="image-content" src="images/sample2.jpg">
-            </figure>
+            </figure> -->
 
         </figcaption>
     </main>
@@ -54,6 +54,69 @@
     </footer>
 
 </div>
+
+<script type="text/javascript">
+    
+var addImagePopup = document.getElementById('add_image');
+document.querySelector('.open-add_image').onclick = function () {
+    addImagePopup.classList.add('opened');
+    return false;
+};
+document.querySelector('.close-add_image').onclick = function () {
+    addImagePopup.classList.remove('opened');
+    return false;
+};
+
+addImagePopup.querySelector('.add_image-form').onsubmit = function () {
+    addImage(this.title.value, this.url.value)
+    return false;
+};
+
+var gallery = document.getElementById('gallery');
+
+function addImage(title, url){
+    let img = document.createElement('img');
+    img.className = 'image-content';
+    img.src = url;
+    
+    let span = document.createElement('span');
+    span.className = 'image-title';
+    span.innerText = title;
+    
+    let a = document.createElement('a');
+    a.className = 'to-drop_image';
+    a.innerText = 'Delete';
+    a.href = '';
+    a.onclick = function () {
+        if (confirm('Вы точно хотите удалить изображение ' + title + ' ?')) {
+            gallery.removeChild(figure);
+        }
+        return false;
+    };
+    
+    let header = document.createElement('header');
+    header.className = 'image-header row';
+    
+    let figure = document.createElement('figure');
+    figure.className = 'image';
+
+    header.appendChild(span);
+    header.appendChild(a);
+    figure.appendChild(header);
+    figure.appendChild(img);
+
+    gallery.insertBefore(figure, gallery.firstChild);
+}
+
+
+window.onload = function () {
+    addImage('City', 'images/sample2.jpg');
+    addImage('Mountain', 'images/sample1.jpg');
+};
+
+
+
+</script>
 
 </body>
 </html>
